@@ -11,6 +11,7 @@ import votes from "./routes/votes.js";
 import auth from "./routes/auth.js";
 import wallet from "./routes/wallet.js";
 import stats from "./routes/stats.js";
+import usersRouter from "./routes/users.js";
 
 const app = express();
 app.use(cors());
@@ -27,5 +28,6 @@ app.use("/votes", votes);
 app.use("/auth", auth);
 app.use("/wallet", wallet);
 app.use("/stats", stats);
+app.use("/users", usersRouter);
 
 export default app;
