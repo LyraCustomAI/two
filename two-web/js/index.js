@@ -1,6 +1,6 @@
 async function loadStats() {
     try {
-        const res = await fetch("https://api.two.lt/stats");
+        const res = await fetch("http://194.60.87.77:3000/stats");
         const data = await res.json();
 
         document.getElementById("stats_users").innerText = data.users;
