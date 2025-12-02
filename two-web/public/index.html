@@ -2,28 +2,63 @@
 <html lang="lt">
 <head>
     <meta charset="UTF-8">
-    <title>TWO.lt — prisijunk</title>
-    <link rel="stylesheet" href="style.css">
+    <title>TWO.lt – MES BENDRAUJAM</title>
+    <link rel="stylesheet" href="style_home.css">
 </head>
 
 <body>
 
-<div class="welcome-box">
-    <img src="img/logo.png" class="logo">
-
-    <h1>Sveiki atvykę į TWO.lt</h1>
-    <p>90’s interneto portalas. Pažintys, galerijos, žinutės, draugai.</p>
-
-    <div class="auth-buttons">
-        <a href="login.html" class="btn">Prisijungti</a>
-        <a href="register.html" class="btn secondary">Registruotis</a>
+<!-- TOP BAR -->
+<div class="topbar">
+    <div class="logoBox">
+        <img src="img/logo.png" class="logo">
+        <span class="slogan">extremely friendly</span>
     </div>
 
-    <div class="stats">
-        <b>Vartotojų:</b> <span id="s_users">0</span><br>
-        <b>Nuotraukų:</b> <span id="s_photos">0</span><br>
-        <b>Žinučių:</b> <span id="s_msg">0</span>
+    <div class="loginBox">
+        <input type="text" id="login_user" placeholder="PRISIJUNGIMO VARDAS">
+        <input type="password" id="login_pass" placeholder="SLAPTAŽODIS">
+        <button id="login_submit">[EITI]</button>
+        <a href="register.html" class="login_link">REGISTRACIJA &gt;&gt;</a>
     </div>
+</div>
+
+<!-- COLLAGE -->
+<div class="collage">
+    <h1>MES BENDRAUJAM.</h1>
+</div>
+
+<!-- INFO BLOCKS -->
+<div class="wide-box">
+
+    <div class="column">
+        <h3>Būk su draugais TWO.lt</h3>
+        <ul>
+            <li>Bendrauk su draugais, bendraklasiais, kolegomis!</li>
+            <li>Keiskis žinutėmis, nuotraukomis, failais!</li>
+            <li>Susirask bendraminčių grupėse ir klubuose!</li>
+            <li>Dalyvauk žaidimuose ir konkursuose!</li>
+        </ul>
+    </div>
+
+    <div class="column">
+        <h3>Per praėjusį mėnesį TWO.lt:</h3>
+        <ul>
+            <li><span id="s_users">0</span> aktyvūs vartotojai</li>
+            <li>išsiųstos <span id="s_msg">0</span> žinutės</li>
+            <li>įkelta <span id="s_photos">0</span> naujos nuotraukos</li>
+            <li><span id="s_friends">0</span> naujos draugystės</li>
+        </ul>
+    </div>
+
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+    <a href="#">Naudojimo taisyklės</a> |
+    <a href="#">Tavo saugumas</a> |
+    <a href="#">Reklama TWO.lt</a> |
+    <a href="#">Kontaktai</a>
 </div>
 
 <script src="js/index.js"></script>
