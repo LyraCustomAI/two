@@ -621,3 +621,60 @@ table {
 .search_btn_big:active {
     border-style: inset;
 }
+
+.reg-box {
+    width: 420px;
+    margin: 40px auto;
+    background: #ffffff;
+    border: 2px solid #ff9900;
+    padding: 18px;
+}
+
+.reg-box h2 {
+    font-size: 16px;
+    color: #ff6600;
+    margin-bottom: 6px;
+}
+
+.reg-box p {
+    font-size: 11px;
+    margin-bottom: 14px;
+    color: #444;
+}
+
+.reg-box form label {
+    font-size: 11px;
+    font-weight: bold;
+    margin-bottom: 3px;
+    display: block;
+}
+
+.reg-box form input,
+.reg-box form select {
+    width: 100%;
+    padding: 5px;
+    border: 1px solid #999;
+    font-size: 12px;
+    margin-bottom: 10px;
+    background: #fff;
+}
+
+.btn-submit {
+    width: 100%;
+    padding: 6px;
+    margin-top: 8px;
+    font-size: 13px;
+    font-weight: bold;
+    background: #ff9900;
+    border: 2px outset #ffaa33;
+    color: #fff;
+    cursor: pointer;
+}
+
+.btn-submit:hover {
+    background: #ff8800;
+}
+
+.btn-submit:active {
+    border-style: inset;
+}
