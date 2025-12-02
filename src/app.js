@@ -1,6 +1,5 @@
 import express from "express";
 import cors from "cors";
-import config from "./config.js";
 
 import photos from "./routes/photos.js";
 import gifts from "./routes/gifts.js";
@@ -25,6 +24,4 @@ app.use("/forum", forum);
 app.use("/votes", votes);
 app.use("/auth", auth);
 
-app.listen(config.port, () => {
-  console.log(`🔥 TWO.lt API online ant ${config.port}`);
-});
+export default app;
