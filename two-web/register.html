@@ -1,44 +1,69 @@
-<!DOCTYPE html>
-<html lang="lt">
-<head>
-    <meta charset="UTF-8">
-    <title>TWO.lt – Registracija</title>
-    <link rel="stylesheet" href="style_portal.css">
-</head>
-<body>
+/* ===== Register Page Style ===== */
 
-<div class="form-box">
-    <h2>Registracija</h2>
+body {
+    background: #e0e0e0;
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    color: #000;
+}
 
-    <label>Prisijungimo vardas:</label>
-    <input id="reg_login" type="text">
+.register-box {
+    width: 420px;
+    margin: 50px auto;
+    padding: 18px;
+    background: #fff;
+    border: 2px solid #ff9900;
+}
 
-    <label>Slaptažodis:</label>
-    <input id="reg_pass" type="password">
+.register-box h2 {
+    margin-bottom: 12px;
+    font-size: 16px;
+    color: #ff6600;
+    text-align: center;
+}
 
-    <label>Vardas:</label>
-    <input id="reg_realname" type="text">
+.form-row {
+    margin-bottom: 10px;
+}
 
-    <label>Pseudonimas:</label>
-    <input id="reg_nick" type="text">
+.form-row label {
+    display: block;
+    font-size: 11px;
+    font-weight: bold;
+    margin-bottom: 3px;
+}
 
-    <label>Amžius:</label>
-    <input id="reg_age" type="number" min="10" max="99">
+.form-row input,
+.form-row select {
+    width: 100%;
+    padding: 5px;
+    font-size: 12px;
+    border: 1px solid #999;
+}
 
-    <label>Lytis:</label>
-    <select id="reg_gender">
-        <option value="">Pasirinkite</option>
-        <option value="m">Vyras</option>
-        <option value="f">Moteris</option>
-        <option value="x">Kita</option>
-    </select>
+.register-submit {
+    width: 100%;
+    padding: 7px;
+    font-size: 13px;
+    font-weight: bold;
+    margin-top: 10px;
+    background: #ff9900;
+    border: 2px outset #ffaa33;
+    color: #fff;
+    cursor: pointer;
+}
 
-    <label>Miestas:</label>
-    <input id="reg_city" type="text">
+.register-submit:hover {
+    background: #ff8800;
+}
 
-    <button id="reg_submit">SUKURTI ANKETĄ</button>
-</div>
+.register-submit:active {
+    border-style: inset;
+}
 
-<script src="register.js"></script>
-</body>
-</html>
+.back-link {
+    display: block;
+    text-align: center;
+    margin-top: 8px;
+    font-size: 11px;
+}
