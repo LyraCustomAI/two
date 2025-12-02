@@ -229,4 +229,395 @@ table {
     padding: 5px;
     font-size: 11px;
     font-weight: bold;
-    backgro
+    background: #ff9900;
+    border: 2px outset #ffaa33;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+.search_btn:hover {
+    background: #ff8800;
+}
+
+.search_btn:active {
+    border-style: inset;
+}
+
+/* ===== MENU ITEMS ===== */
+.panel_menu {
+    padding: 0;
+    background: #ffffff;
+}
+
+.menu_item {
+    display: block;
+    padding: 7px 10px;
+    font-size: 11px;
+    color: #333;
+    text-decoration: none;
+    border-bottom: 1px solid #eeeeee;
+    line-height: 1.3;
+}
+
+.menu_item:hover {
+    background: #fff5e6;
+    color: #ff6600;
+}
+
+/* ===== STATISTICS ===== */
+.stat_item {
+    padding: 4px 0;
+    font-size: 11px;
+    border-bottom: 1px dotted #cccccc;
+}
+
+.stat_item:last-child {
+    border-bottom: none;
+}
+
+.stat_label {
+    color: #666;
+}
+
+.stat_value {
+    float: right;
+    font-weight: bold;
+    color: #ff6600;
+}
+
+/* ===== USERS GRID ===== */
+.users_grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 8px;
+}
+
+.users_grid .avatar {
+    text-align: center;
+    font-size: 10px;
+    background: #ffffff;
+    border: 1px solid #cccccc;
+    padding: 5px;
+    display: block;
+    text-decoration: none;
+    color: #333;
+}
+
+.users_grid .avatar:hover {
+    border-color: #ff9900;
+    background: #fff5e6;
+}
+
+.users_grid .avatar img {
+    width: 100%;
+    height: 80px;
+    object-fit: cover;
+    border: 1px solid #999;
+    margin-bottom: 4px;
+    display: block;
+}
+
+.users_grid .avatar span {
+    display: block;
+    font-weight: bold;
+    color: #0066cc;
+}
+
+/* ===== TOP LIST ===== */
+.top_list {
+    background: #ffffff;
+}
+
+.top_list a {
+    display: block;
+    padding: 5px 8px;
+    font-size: 11px;
+    color: #333;
+    text-decoration: none;
+    border-bottom: 1px solid #eeeeee;
+}
+
+.top_list a:hover {
+    background: #fff5e6;
+}
+
+.top_list span {
+    margin-right: 5px;
+}
+
+/* ===== ACTIVITY FEED ===== */
+.activity_feed {
+    background: #ffffff;
+}
+
+.activity_item {
+    display: flex;
+    align-items: center;
+    padding: 8px;
+    border-bottom: 1px solid #eeeeee;
+}
+
+.activity_item:last-child {
+    border-bottom: none;
+}
+
+.activity_photo {
+    width: 40px;
+    height: 40px;
+    border: 1px solid #cccccc;
+    margin-right: 10px;
+    border-radius: 3px;
+}
+
+.activity_text {
+    flex: 1;
+    font-size: 11px;
+    color: #333;
+}
+
+.activity_text a {
+    font-weight: bold;
+    color: #0066cc;
+}
+
+.activity_time {
+    display: block;
+    font-size: 10px;
+    color: #999;
+    margin-top: 2px;
+}
+
+/* ===== ONLINE USERS (RIGHT SIDEBAR) ===== */
+.online_list {
+    background: #ffffff;
+}
+
+.online_user {
+    display: flex;
+    align-items: center;
+    padding: 6px;
+    border-bottom: 1px solid #eeeeee;
+    text-decoration: none;
+}
+
+.online_user:hover {
+    background: #fff5e6;
+}
+
+.online_photo {
+    width: 30px;
+    height: 30px;
+    border: 1px solid #cccccc;
+    margin-right: 8px;
+}
+
+.online_name {
+    flex: 1;
+    font-size: 11px;
+    color: #333;
+}
+
+.online_dot {
+    color: #00cc00;
+    font-size: 14px;
+}
+
+/* ===== NEW USERS MINI (RIGHT SIDEBAR) ===== */
+.new_users_mini {
+    background: #ffffff;
+}
+
+.new_user_mini {
+    display: flex;
+    align-items: center;
+    padding: 6px;
+    border-bottom: 1px solid #eeeeee;
+    text-decoration: none;
+}
+
+.new_user_mini:hover {
+    background: #fff5e6;
+}
+
+.new_user_photo {
+    width: 30px;
+    height: 30px;
+    border: 1px solid #cccccc;
+    margin-right: 8px;
+}
+
+.new_user_name {
+    flex: 1;
+    font-size: 11px;
+    color: #333;
+}
+
+/* ===== QUICK INFO ===== */
+.quick_info {
+    background: #ffffff;
+}
+
+.info_item {
+    padding: 5px;
+    font-size: 10px;
+    color: #666;
+    border-bottom: 1px dotted #eeeeee;
+}
+
+.info_item:last-child {
+    border-bottom: none;
+}
+
+/* ===== FOOTER ===== */
+.footer_table {
+    background: #f0f0f0;
+    border-top: 2px solid #cccccc;
+}
+
+.footer_content {
+    text-align: center;
+    font-size: 10px;
+    color: #666;
+    padding: 10px;
+}
+
+.footer_content a {
+    color: #0066cc;
+    margin: 0 5px;
+}
+
+/* ===== RESPONSIVE ADJUSTMENTS ===== */
+@media (max-width: 900px) {
+    .topbar_center {
+        display: none;
+    }
+    
+    .sidebar_right {
+        display: none;
+    }
+}
+
+/* ===== CONTENT PARAGRAPHS ===== */
+.panel_content p {
+    line-height: 1.5;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.panel_content p:last-child {
+    margin-bottom: 0;
+}
+
+/* ===== DATING GRID ===== */
+.dating_grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
+.dating_card {
+    background: #ffffff;
+    border: 2px solid #cccccc;
+    padding: 8px;
+    text-align: center;
+    position: relative;
+}
+
+.dating_card:hover {
+    border-color: #ff9900;
+    background: #fff5e6;
+}
+
+.dating_card a {
+    text-decoration: none;
+    color: #333;
+    display: block;
+}
+
+.dating_avatar {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border: 2px solid #999;
+    margin-bottom: 6px;
+}
+
+.online_dot {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 12px;
+    height: 12px;
+    background: #00cc00;
+    border-radius: 50%;
+    border: 2px solid #ffffff;
+}
+
+.dating_info {
+    font-size: 11px;
+    line-height: 1.4;
+}
+
+.dating_info strong {
+    font-size: 12px;
+    color: #ff6600;
+    display: block;
+    margin-bottom: 3px;
+}
+
+.dating_bio {
+    font-size: 10px;
+    color: #666;
+    margin-top: 4px;
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* ===== SEARCH FORM (ADVANCED) ===== */
+.search_row {
+    margin-bottom: 10px;
+}
+
+.search_row label {
+    display: block;
+    font-size: 11px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 3px;
+}
+
+.search_field {
+    width: 100%;
+    padding: 5px;
+    font-size: 11px;
+    border: 1px solid #999;
+    box-sizing: border-box;
+}
+
+.search_field_small {
+    width: 48%;
+    padding: 5px;
+    font-size: 11px;
+    border: 1px solid #999;
+    box-sizing: border-box;
+}
+
+.search_btn_big {
+    padding: 8px 30px;
+    font-size: 12px;
+    font-weight: bold;
+    background: #ff9900;
+    border: 2px outset #ffaa33;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+.search_btn_big:hover {
+    background: #ff8800;
+}
+
+.search_btn_big:active {
+    border-style: inset;
+}
