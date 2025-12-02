@@ -1,5 +1,5 @@
 import express from "express";
-import pool from "../db/pool.js";
+import { pool } from "../db/pool.js";
 import { hashPassword, verifyPassword } from "../utils/hash.js";
 import { generateToken } from "../utils/tokens.js";
 import { clean } from "../utils/sanitizer.js";
