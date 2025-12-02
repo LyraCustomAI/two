@@ -1,11 +1,11 @@
 import { Router } from "express";
-import db from "../db.js";
+import { pool } from "../db/pool.js";
 import { authMiddleware } from "../middleware/auth.js";
 
 const router = Router();
 
 router.get("/me", authMiddleware, async (req, res) => {
-  const [rows] = await db.query(
+  const [rows] = await pool.query(
     "SELECT balance FROM users WHERE id = ? LIMIT 1",
     [req.user.id]
   );
@@ -14,31 +14,40 @@ router.get("/me", authMiddleware, async (req, res) => {
 
 router.post("/add", authMiddleware, async (req, res) => {
   const { amount } = req.body;
-  if (amount <= 0) return res.status(400).json({ error: "invalid amount" });
 
-  await db.query(
+  if (!amount || amount <= 0)
+    return res.status(400).json({ error: "invalid amount" });
+
+  await pool.query(
     "UPDATE users SET balance = balance + ? WHERE id = ?",
     [amount, req.user.id]
   );
+
   res.json({ ok: true });
 });
 
 router.post("/spend", authMiddleware, async (req, res) => {
   const { amount } = req.body;
-  if (amount <= 0) return res.status(400).json({ error: "invalid amount" });
 
-  const [user] = await db.query(
-    "SELECT balance FROM users WHERE id = ?",
+  if (!amount || amount <= 0)
+    return res.status(400).json({ error: "invalid amount" });
+
+  const [user] = await pool.query(
+    "SELECT balance FROM users WHERE id = ? LIMIT 1",
     [req.user.id]
   );
+
+  if (!user.length)
+    return res.status(400).json({ error: "user not found" });
 
   if (user[0].balance < amount)
     return res.status(400).json({ error: "insufficient funds" });
 
-  await db.query(
+  await pool.query(
     "UPDATE users SET balance = balance - ? WHERE id = ?",
     [amount, req.user.id]
   );
+
   res.json({ ok: true });
 });
 
