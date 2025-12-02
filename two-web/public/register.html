@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="lt">
+<head>
+    <meta charset="UTF-8">
+    <title>TWO.lt – Registracija</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="form-box">
+    <h2>Registracija</h2>
+
+    <label>Prisijungimo vardas:</label>
+    <input id="reg_login" type="text">
+
+    <label>Slaptažodis:</label>
+    <input id="reg_pass" type="password">
+
+    <label>Vardas:</label>
+    <input id="reg_realname" type="text">
+
+    <label>Pseudonimas:</label>
+    <input id="reg_nick" type="text">
+
+    <label>Amžius:</label>
+    <input id="reg_age" type="number" min="10" max="99">
+
+    <label>Lytis:</label>
+    <select id="reg_gender">
+        <option value="">Pasirinkite</option>
+        <option value="m">Vyras</option>
+        <option value="f">Moteris</option>
+        <option value="x">Kita</option>
+    </select>
+
+    <label>Miestas:</label>
+    <input id="reg_city" type="text">
+
+    <button id="reg_submit">SUKURTI ANKETĄ</button>
+</div>
+
+<script src="register.js"></script>
+</body>
+</html>
