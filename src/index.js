@@ -1,21 +1,40 @@
 import express from "express";
 import cors from "cors";
-import { pool } from "./db/pool.js";
+import dotenv from "dotenv";
+import { testConnection } from "./db/pool.js";
+import { authRouter } from "./routes/auth.js";
+import { usersRouter } from "./routes/users.js";
+
+dotenv.config();
 
 const app = express();
+const PORT = process.env.PORT || 3000;
+
+// Middlewares
 app.use(cors());
 app.use(express.json());
 
+// Health-check API + DB
 app.get("/health", async (req, res) => {
   try {
-    const conn = await pool.getConnection();
-    await conn.query("SELECT 1");
-    conn.release();
+    await testConnection();
     res.json({ api: true, db: true });
   } catch (err) {
-    res.json({ api: true, db: false });
+    console.error("Health error:", err);
+    res.status(500).json({ api: true, db: false });
   }
 });
 
-app.listen(3000, () => console.log("🔥 TWO API startavo ant 3000 porto"));
+// Routes
+app.use("/auth", authRouter);
+app.use("/", usersRouter); // /me, /users/:id, /me PATCH
 
+// 404
+app.use((req, res) => {
+  res.status(404).json({ success: false, message: "Nerastas endpointas" });
+});
+
+// Start
+app.listen(PORT, () => {
+  console.log(`TWO.lt API startuotas ant ${PORT} porto ✨`);
+});
