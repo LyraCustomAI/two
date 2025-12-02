@@ -1,5 +1,5 @@
 import express from "express";
-import pool from "../db/pool.js";
+import { pool } from "../db/pool.js";
 import { authRequired } from "../middleware/auth.js";
 import { clean } from "../utils/sanitizer.js";
 
