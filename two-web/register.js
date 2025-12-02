@@ -1,37 +1,33 @@
-const API_URL = "http://194.60.87.77:3000";
+const API = "http://194.60.87.77:3000";
 
-const license = window.fivem_license || localStorage.getItem("license");
+document.getElementById("reg_submit").onclick = async (e) => {
+    e.preventDefault();
 
-document.getElementById("reg_submit").onclick = async () => {
-
+    const license = window.fivem_license || localStorage.getItem("license");
     if (!license) {
-        alert("Nėra licence. Atidaryk UI per žaidimą.");
+        alert("UI turi būti paleistas per žaidimą. Nėra licence.");
         return;
     }
 
-    const body = {
-        license,
-        login_name: document.getElementById("reg_login").value,
-        password: document.getElementById("reg_pass").value,
-        real_name: document.getElementById("reg_realname").value,
-        nickname: document.getElementById("reg_nick").value,
-        age: document.getElementById("reg_age").value,
-        gender: document.getElementById("reg_gender").value,
-        city: document.getElementById("reg_city").value
-    };
-
-    const res = await fetch(`${API_URL}/auth/register`, {
+    const res = await fetch(`${API}/auth/register`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(body)
+        body: JSON.stringify({
+            license,
+            display_name: document.getElementById("nick").value,
+            password: document.getElementById("login_pass").value,
+            age: Number(document.getElementById("age").value),
+            city: document.getElementById("city").value,
+            gender: document.getElementById("gender").value
+        })
     });
 
     const out = await res.json();
 
-    if (out.token) {
-        localStorage.setItem("token", out.token);
-        window.location.href = "home.html";
+    if (out.ok) {
+        alert("Profilis sukurtas! Eik prisijungti.");
+        window.location.href = "login.html";
     } else {
-        alert(out.error || "Registracija nepavyko");
+        alert(out.error || "Klaida registruojant.");
     }
 };
